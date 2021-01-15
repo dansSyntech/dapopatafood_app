@@ -1,6 +1,7 @@
 import 'package:dapopatafood_app/services/auth.dart';
 import 'package:dapopatafood_app/widget/commons_widget.dart';
 import 'package:dapopatafood_app/widget/customText_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
