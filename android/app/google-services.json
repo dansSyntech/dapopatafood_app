@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "244155348119",
+    "project_id": "dapo-pata-food",
+    "storage_bucket": "dapo-pata-food.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244155348119:android:17a0efa574b2a03b5da5d2",
+        "android_client_info": {
+          "package_name": "com.example.dapopatafood_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "244155348119-e9hju1m72lsgtv11v04oh48jkmvj43lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrOIk6ibjjB5pmcU9o-v5N2SK2kce9rhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "244155348119-e9hju1m72lsgtv11v04oh48jkmvj43lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
