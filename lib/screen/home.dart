@@ -1,3 +1,4 @@
+import 'package:dapopatafood_app/services/auth.dart';
 import 'package:dapopatafood_app/widget/category_widget.dart';
 import 'package:dapopatafood_app/widget/commons_widget.dart';
 import 'package:dapopatafood_app/widget/customText_widget.dart';
@@ -12,6 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+   AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +77,7 @@ class _HomeState extends State<Home> {
               child: CustomText(
                   text: "Featured", size: 24, weight: FontWeight.bold),
             ),
-            foodScreen()
+            foodScreen(),
           ],
         ),
       ),

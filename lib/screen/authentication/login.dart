@@ -17,6 +17,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final AuthService _auth = AuthService();
 
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   Firebase.initializeApp();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +50,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: CustomText(text: 'Goto', color: black),
                   onPressed: () async {
 
-                    await _auth.signInAnon();
-                    // Get.to(Home());
+                    var result =  await _auth.signInAnon();
+
+                    print('user $result');
+
+                    if(result != null){
+                      print('you make it');
+                      Get.to(Home());
+                    }
+                    else{
+                      print('fail');
+                    }
+
                   }),
             )
           ],

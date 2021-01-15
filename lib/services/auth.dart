@@ -6,10 +6,12 @@ class AuthService {
   // sign in anon
   Future signInAnon() async {
     try {
+      var user;
       await _auth.signInAnonymously().then((value) {
-        var user = value.user;
-        return user;
+         user = value.user;
       });
+      print('user $user') ;
+      return user;
     } catch (e) {
       print(e.toString());
       return null;
