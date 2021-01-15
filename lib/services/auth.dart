@@ -1,17 +1,42 @@
+import 'package:dapopatafood_app/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  //create user object based on Firebaser user
+  CustomUser _userFromFirebaseUser (User user){
+    return user !=null ? CustomUser(uid: user.uid) : null;
+  }
+
+  //auth change user stream
+  Stream<CustomUser> get user{
+    return _auth.authStateChanges()
+        // .map((User user) => _userFromFirebaseUser(user));
+    .map(_userFromFirebaseUser);
+  }
+
   // sign in anon
   Future signInAnon() async {
     try {
-      var user;
+      User user;
       await _auth.signInAnonymously().then((value) {
          user = value.user;
       });
-      print('user $user') ;
       return user;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+  Future signInAnonUid() async {
+    try {
+      User user;
+      await _auth.signInAnonymously().then((value) {
+        user = value.user;
+      });
+      return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
       return null;
@@ -23,5 +48,13 @@ class AuthService {
 //register with email and password
 
 // sign out
+  Future signOut() async {
+    try{
+      return await _auth.signOut();
+    } catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
 
 }

@@ -52,15 +52,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     var result =  await _auth.signInAnon();
 
-                    print('user $result');
-
-                    if(result != null){
-                      print('you make it');
-                      Get.to(Home());
-                    }
-                    else{
-                      print('fail');
-                    }
 
                   }),
             )

@@ -9,13 +9,6 @@ class Authenticate extends StatefulWidget {
 
 class _AuthenticateState extends State<Authenticate> {
 
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   Firebase.initializeApp();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Container(

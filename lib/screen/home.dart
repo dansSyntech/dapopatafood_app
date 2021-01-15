@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-   AuthService _auth = AuthService();
+   final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -31,24 +31,30 @@ class _HomeState extends State<Home> {
                     text: 'What would you like to eat?',
                   ),
                 ),
-                Stack(children: [
-                  IconButton(
-                    icon: Icon(Icons.circle_notifications),
-                    onPressed: () {},
-                  ),
-                  Positioned(
-                    top: 12,
-                    right: 12,
-                    child: Container(
-                      height: 10,
-                      width: 10,
-                      decoration: BoxDecoration(
-                        color: red,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                  )
-                ])
+                // Stack(children: [
+                //   IconButton(
+                //     icon: Icon(Icons.settings),
+                //     onPressed: () {},
+                //   ),
+                //   Positioned(
+                //     top: 12,
+                //     right: 12,
+                //     child: Container(
+                //       height: 10,
+                //       width: 10,
+                //       decoration: BoxDecoration(
+                //         color: red,
+                //         borderRadius: BorderRadius.circular(20),
+                //       ),
+                //     ),
+                //   )
+                // ])
+                IconButton(
+                  icon: Icon(Icons.settings),
+                  onPressed: () async {
+                    await _auth.signOut();
+                  },
+                ),
               ],
             ),
             SizedBox(height: 5),
